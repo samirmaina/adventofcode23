@@ -103,3 +103,11 @@ func RegexMatchAll(rg *regexp.Regexp, input string) (paramsMap map[string]string
 	}
 	return paramsMap
 }
+
+func Filepath(filename string) string {
+	dir, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return dir + "/" + filename
+}
